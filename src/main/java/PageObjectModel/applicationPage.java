@@ -67,7 +67,7 @@ public class applicationPage extends AbstractClass {
         deleteFunctionality( tableListofNames ,listOfDeleteButtons ,value , buttonYes);
     }
 
-    public void verifingDeleted(String value){
+    public void verifingDeleted(String value) throws InterruptedException {
         verifyDeletedAbstractClass( tableListofNames , value );
     }
 

@@ -29,7 +29,7 @@ public class HRSalaryPage extends AbstractClass {
     private WebElement positionSalary;
 
     @FindBy(xpath = "//ms-dialog-content//ms-text-field[@placeholder='GENERAL.FIELD.NAME']//input")
-    private WebElement posiyionOfSalary;
+    private WebElement positionOfSalary;
 
 
     public void clickOnHumanResource(){
@@ -48,7 +48,7 @@ public class HRSalaryPage extends AbstractClass {
     }
 
     public void typeInPositionSalary(String salary){
-        sendkeysFunction(positionSalary,salary);
+        sendkeysFunction(positionOfSalary,salary);
     }
 
 

@@ -1,23 +1,21 @@
 package PageObjectModel;
 
+import Utilities.Driver;
 import Utilities.ReadPropertiesFile;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage extends AbstractClass {
-    private static WebDriver driver;
+    WebDriver driver;
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            //  System.setProperty("webdriver.chrome.driver", "/Users/yavuzaydin/Documents/Libraries/drivers/chromedriver");
-            ChromeDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+    public SignInPage() {
+        driver = Driver.getDriver();
+        PageFactory.initElements(driver, this);
 
-        }
-        return driver;
     }
 
     // find by is working as driver.findElement
@@ -32,13 +30,13 @@ public class SignInPage extends AbstractClass {
     private WebElement buttonLogin;
 
     public void typeIninputUserName() {
-        sendkeysFunction(inputUserName, ReadPropertiesFile.getData("Username"));
+        sendkeysFunction(inputUserName,  ReadPropertiesFile.getData("Username"));
 
 
     }
 
     public void typeIninputPassword() {
-        sendkeysFunction(inputPassword, ReadPropertiesFile.getData("Password"));
+        sendkeysFunction(inputPassword,ReadPropertiesFile.getData("Password"));
 
     }
 
@@ -46,6 +44,5 @@ public class SignInPage extends AbstractClass {
         clickFunction(buttonLogin);
     }
 }
-
 
 

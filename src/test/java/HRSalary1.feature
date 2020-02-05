@@ -9,12 +9,11 @@ Feature: Creating Position Salary
 
     And Click on position salary
     And Click on plus icon
-
-    And Type in new positions "positionsNames"
+    And Type in new positions salary "abcdefgh"
 
     When Click on save button
-   Then "abcdefgh" should be displayed
-   Then Remove the data "abcdefgh"
-   Then Verify data is removed "abcdefgh"
+    Then "abcdefgh" should be displayed
+    Then Remove the data "abcdefgh"
+    Then Verify data is removed "abcdefgh"
+    
 
-Scenario Outline:

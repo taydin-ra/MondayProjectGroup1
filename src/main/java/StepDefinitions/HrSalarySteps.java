@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class HrSalarySteps {
 
     WebDriver driver;
-    SignInPage sip = new SignInPage();
+    SignInPage sip= new SignInPage();
     HRSalaryPage hr = new HRSalaryPage();
     applicationPage ap = new applicationPage();
 
@@ -35,6 +35,7 @@ public class HrSalarySteps {
         sip.typeIninputUserName();
         sip.typeIninputPassword();
         sip.clickOnbuttonLogin();
+
     }
 
     @Given("^Click on human resources on top$")
@@ -46,39 +47,37 @@ public class HrSalarySteps {
     @Given("^Click on setup$")
     public void click_on_setup() throws Throwable {
         hr.clickOnSetup();
-    }
 
+    }
     @Given("^Click on position salary$")
     public void click_on_position_salary() throws Throwable {
+
         hr.clickOnPositionSalary();
     }
-
     @Given("^Click on plus icon$")
     public void click_on_plus_icon() throws Throwable {
         ap.clickPlusButton();
-    }
 
-    @Given("^Type in new position salary \"([^\"]*)\"$")
-    public void type_in_new_position_salary(String salary) throws Throwable {
-        hr.typeInPositionSalary(salary);
     }
-
+    @Given("^Type in new positions salary \"([^\"]*)\"$")
+    public void type_in_new_position_salary(String name) throws Throwable {
+        hr.typeInPositionSalary(name);
+    }
     @When("^Click on save button$")
     public void click_on_save_button() throws Throwable {
         ap.clickSaveButton();
     }
-
     @Then("^\"([^\"]*)\" should be displayed$")
     public void should_be_displayed(String salaryName) throws Throwable {
         ap.nameIsCreated(salaryName);
 
     }
-
     @Then("^Remove the data \"([^\"]*)\"$")
-    public void remove_the_data(String salary) throws Throwable {
-        ap.deletingElement(salary);
-
+    public void remove_the_data(String name) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        ap.deletingElement(name);
     }
+
 
     @Then("^Verify data is removed \"([^\"]*)\"$")
     public void verify_data_is_removed(String salary) throws Throwable {

@@ -81,7 +81,8 @@ public class AbstractClass {
 
     }
 
-    public void verifyDeletedAbstractClass(List<WebElement> tableList, String value) {
+    public void verifyDeletedAbstractClass(List<WebElement> tableList, String value) throws InterruptedException {
+        Thread.sleep(2000);
         boolean result = false;
         for (int i = 0; i < tableList.size(); i++) {
             if (tableList.get(i).getText().trim().equalsIgnoreCase(value)) {
